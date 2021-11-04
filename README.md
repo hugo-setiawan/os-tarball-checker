@@ -7,7 +7,7 @@ A simple script written to check weekly grades in Operating System course.
 ## Tata Cara Penggunaan
 
 1. Unduh file `myscript.sh`.
-2. Ubah isi ACCNAME dengan nama akun GitHub-mu.
+2. Ubah isi `ACCNAME` dengan nama akun GitHub-mu.
 3. Buat folder bernama `tarball-grade` di directory `$HOME` pada Virtual Machine.
 4. Salin file `myscript.sh` ke dalam folder tersebut (dengan menggunakan SCP atau FTP File Manager).<br>
    ATAU<br>
