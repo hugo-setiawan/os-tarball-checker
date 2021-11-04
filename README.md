@@ -18,4 +18,4 @@ A simple script written to check weekly grades in Operating System course.
 
 ## Lisensi
 
-Kode `myscript.sh` memiliki lisensi [AGPL-3.0 License][LICENSE].
+Kode `myscript.sh` memiliki lisensi [AGPL-3.0 License](LICENSE).
