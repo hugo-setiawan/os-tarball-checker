@@ -15,3 +15,7 @@ A simple script written to check weekly grades in Operating System course.
 5. Jalankan `myscript.sh` dengan menggunakan `./myscript.sh`.
 6. Masukkan week yang ingin dicek (misalkan week 6, maka inputnya adalah `06`).
 7. Voila! Nilaimu akan keluar diikuti dengan benchmark pada week tersebut.
+
+## Lisensi
+
+Kode `myscript.sh` memiliki lisensi [AGPL-3.0 License][LICENSE].
