@@ -1,8 +1,20 @@
 # os-tarball-checker
 
-Sebuah skrip sederhana untuk mengecek nilia mingguan mata kuliah Sistem Operasi (OS).
+> **LAST REVISION**: `REV03 Sun 21 Nov 2021 16:45:48 WIB`
+
+Sebuah skrip sederhana untuk mengecek nilai mingguan mata kuliah Sistem Operasi (OS).
 
 > Copyright (C) 2021 Muhammad Athallah
+
+## CHANGELOG
+
+### REV03
+- Mengubah nama skrip menjadi `tarball-checker.sh`.
+- Mengubah tujuan direktori file tarball menjadi `/tmp/tarball-checker`, sehingga tidak mengotori direktori pengguna dan menambah fleksibilitas lokasi penempatan skrip (dapat ditaruh di folder mana saja, tidak harus dalam `$HOME/tarball-grade`).
+- Mengubah input nama akun pengguna menjadi masukan interaktif (tidak _hard-coded_).
+
+## REV02
+- Mengubah input minggu yang ingin dicek menjadi masukan interaktif (tidak _hard-coded_).
 
 ## Tata Cara Penggunaan
 
@@ -17,4 +29,4 @@ Sebuah skrip sederhana untuk mengecek nilia mingguan mata kuliah Sistem Operasi 
 
 ## Lisensi
 
-Kode `myscript.sh` memiliki lisensi [AGPL-3.0 License](LICENSE).
+Kode `tarball-checker.sh` memiliki lisensi [AGPL-3.0 License](LICENSE).
