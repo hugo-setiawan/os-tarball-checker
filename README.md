@@ -1,6 +1,6 @@
 # os-tarball-checker
 
-> **LAST REVISION**: `REV03 Sun 21 Nov 2021 16:45:48 WIB`
+> **LAST REVISION**: `REV04 Sun 21 Nov 2021 18:29:25 WIB`
 
 Sebuah skrip sederhana untuk mengecek nilai mingguan mata kuliah Sistem Operasi (OS).
 
@@ -8,13 +8,16 @@ Sebuah skrip sederhana untuk mengecek nilai mingguan mata kuliah Sistem Operasi 
 
 ## CHANGELOG
 
+### REV04
+- Mengubah masukan nama akun pengguna menjadi otomatis (menggunakan skrip `$USER`).
+
 ### REV03
 - Mengubah nama skrip menjadi `tarball-checker.sh`.
 - Mengubah tujuan direktori file tarball menjadi `/tmp/tarball-checker`, sehingga tidak mengotori direktori pengguna dan menambah fleksibilitas lokasi penempatan skrip (dapat ditaruh di folder mana saja, tidak harus dalam `$HOME/tarball-grade`).
-- Mengubah input nama akun pengguna menjadi masukan interaktif (tidak _hard-coded_).
+- Mengubah masukan nama akun pengguna menjadi masukan interaktif (tidak _hard-coded_).
 
 ### REV02
-- Mengubah input minggu yang ingin dicek menjadi masukan interaktif (tidak _hard-coded_).
+- Mengubah masukan minggu yang ingin dicek menjadi masukan interaktif (tidak _hard-coded_).
 
 ## Tata Cara Penggunaan
 

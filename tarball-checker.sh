@@ -5,14 +5,16 @@
 # useful, but WITHOUT ANY WARRANTY; without even the implied
 # warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
+# REV04 Sun 21 Nov 2021 18:29:25 WIB
 # REV03 Sun 21 Nov 2021 16:45:48 WIB
 # REV02 Tue 19 Oct 2021 13:30:00 WIB
 # REV01 Tue 19 Oct 2021 12:40:50 WIB
 # START Tue 19 Oct 2021 11:02:45 WIB
 
-read -p "Please enter the username of your GitHub account: " ACCNAME
-
 read -p "Please enter the desired week to be checked (use two-digit format): " WEEK
+
+# Get the GitHub username from the username of Linux
+ACCNAME=$USER
 
 # Remove temporary directory (if any)
 rm -rf /tmp/tarball-grade/
