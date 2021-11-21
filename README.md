@@ -1,20 +1,19 @@
 # os-tarball-checker
 
-A simple script written to check weekly grades in Operating System course.
+Sebuah skrip sederhana untuk mengecek nilia mingguan mata kuliah Sistem Operasi (OS).
 
 > Copyright (C) 2021 Muhammad Athallah
 
 ## Tata Cara Penggunaan
 
-1. Unduh file `myscript.sh`.
-2. Ubah isi `ACCNAME` dengan nama akun GitHub-mu.
-3. Buat folder bernama `tarball-grade` di directory `$HOME` pada Virtual Machine.
-4. Salin file `myscript.sh` ke dalam folder tersebut (dengan menggunakan SCP atau FTP File Manager).<br>
+1. Unduh file `tarball-checker.sh` di dalam mesin virtual.<br>
    ATAU<br>
-   Buat file `myscript.sh` dan copas isi file `myscript.sh`. Don't forget to make it executable (gunakan `chmod +x myscript.sh`).
-5. Jalankan `myscript.sh` dengan menggunakan `./myscript.sh`.
-6. Masukkan week yang ingin dicek (misalkan week 6, maka inputnya adalah `06`).
-7. Voila! Nilaimu akan keluar diikuti dengan benchmark pada week tersebut.
+   Unduh file `tarball-checker.sh` pada komputer utama lalu salin file tersebut ke dalam mesin virtual (dengan menggunakan SCP atau FTP File Manager).<br>
+   ATAU<br>
+   Buat file `tarball-checker.sh` dan salin kode skrip dari `tarball-checker.sh` yang ada dalam repositori ini ke dalam file tersebut. Jangan lupa untuk mengatur file tersebut menjadi _executable_  (gunakan `chmod +x tarball-checker.sh`).
+2. Jalankan skrip `tarball-checker.sh` dengan menggunakan perintah `./tarball-checker.sh`.
+3. Masukkan nama akun GitHub-mu dan detail minggu yang ingin dicek (misalkan minggu ke-6, maka inputnya adalah `06`).
+4. Voila! Nilaimu akan keluar diikuti dengan benchmark pada minggu tersebut.
 
 ## Lisensi
 
