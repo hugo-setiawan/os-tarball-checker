@@ -25,7 +25,7 @@ Sebuah skrip sederhana untuk mengecek nilai mingguan mata kuliah Sistem Operasi 
    ATAU<br>
    Unduh file `tarball-checker.sh` pada komputer utama lalu salin file tersebut ke dalam mesin virtual (dengan menggunakan SCP atau FTP File Manager).<br>
    ATAU<br>
-   Buat file `tarball-checker.sh` dan salin kode skrip dari `tarball-checker.sh` yang ada dalam repositori ini ke dalam file tersebut. Jangan lupa untuk mengatur file tersebut menjadi _executable_  (gunakan `chmod +x tarball-checker.sh`).
+   Buat file `tarball-checker.sh` dan salin kode skrip dari `tarball-checker.sh` yang ada dalam repositori ini ke dalam file tersebut. Jangan lupa untuk mengatur file tersebut menjadi _executable_  (gunakan perintah `chmod +x tarball-checker.sh`).
 2. Jalankan skrip `tarball-checker.sh` dengan menggunakan perintah `./tarball-checker.sh`.
 3. Masukkan minggu yang ingin dicek detail nilainya (misalkan minggu ke-6, maka masukannya adalah `06`).
 4. Voila! Nilaimu akan keluar diikuti dengan _benchmark_ pada minggu tersebut.
