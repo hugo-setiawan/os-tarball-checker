@@ -24,8 +24,8 @@ Sebuah skrip sederhana untuk mengecek nilai mingguan mata kuliah Sistem Operasi 
    ATAU<br>
    Buat file `tarball-checker.sh` dan salin kode skrip dari `tarball-checker.sh` yang ada dalam repositori ini ke dalam file tersebut. Jangan lupa untuk mengatur file tersebut menjadi _executable_  (gunakan `chmod +x tarball-checker.sh`).
 2. Jalankan skrip `tarball-checker.sh` dengan menggunakan perintah `./tarball-checker.sh`.
-3. Masukkan nama akun GitHub-mu dan detail minggu yang ingin dicek (misalkan minggu ke-6, maka inputnya adalah `06`).
-4. Voila! Nilaimu akan keluar diikuti dengan benchmark pada minggu tersebut.
+3. Masukkan nama akun GitHub-mu dan detail minggu yang ingin dicek (misalkan minggu ke-6, maka masukannya adalah `06`).
+4. Voila! Nilaimu akan keluar diikuti dengan _benchmark_ pada minggu tersebut.
 
 ## Lisensi
 
