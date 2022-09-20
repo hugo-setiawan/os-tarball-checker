@@ -28,14 +28,12 @@ mkdir /tmp/tarball-grade/
 mkdir /tmp/tarball-grade/mygrade
 mkdir /tmp/tarball-grade/benchmark
 
+# If compression is bz2, use tar -xj. If compression is xz, use tar -xJ. I will find a more elegant solution to this.
 # Download mygrade
-wget https://os.vlsm.org/Log/$ACCNAME.tar.bz2.txt -O /tmp/tarball-grade/$ACCNAME.tar.bz2.txt
-gpg --decrypt /tmp/tarball-grade/$ACCNAME.tar.bz2.txt > /tmp/tarball-grade/$ACCNAME.tar.bz2
-tar -xf /tmp/tarball-grade/$ACCNAME.tar.bz2 -C /tmp/tarball-grade/mygrade
+wget https://os.vlsm.org/Log/$ACCNAME.tar.bz2.txt -O - | gpg | tar -xj -C /tmp/tarball-grade/mygrade
 
 # Download benchmark
-wget https://cbkadal.github.io/$REPO_NAME/SandBox/cbkadal.tar.xz -O /tmp/tarball-grade/cbkadal.tar.xz
-tar -xf /tmp/tarball-grade/cbkadal.tar.xz -C /tmp/tarball-grade/benchmark
+wget https://cbkadal.github.io/$REPO_NAME/SandBox/cbkadal.tar.xz -O - | tar -xJ -C /tmp/tarball-grade/benchmark
 
 # Print grades
 echo "### GRADES OF DW$WEEK ###"
