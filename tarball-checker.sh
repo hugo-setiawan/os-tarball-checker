@@ -27,7 +27,7 @@ mkdir $TARBALL_TEMP_DIR/benchmark
 
 # If compression is bz2, use tar -xj. If compression is xz, use tar -xJ. I will find a more elegant solution to this.
 # Download mygrade
-wget https://os.vlsm.org/Log/$ACCNAME.tar.bz2.txt -O - | gpg | tar -xj -C $TARBALL_TEMP_DIR/mygrade
+wget https://os.vlsm.org/Log/$ACCNAME.tar.bz2.txt -O - | gpg --decrypt | tar -xj -C $TARBALL_TEMP_DIR/mygrade
 
 # Download benchmark
 wget https://cbkadal.github.io/$REPO_NAME/SandBox/cbkadal.tar.xz -O - | tar -xJ -C $TARBALL_TEMP_DIR/benchmark
@@ -46,3 +46,4 @@ do
     THIRDPART=$(printf '%-16s' "$BENCHMARK")
     echo "$FIRSTPART | $SECONDPART | $THIRDPART"
 done
+
