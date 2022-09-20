@@ -13,6 +13,9 @@
 
 read -p "Please enter the desired week to be checked (use two-digit format): " WEEK
 
+# ATTN: Please set the following variable according to the os repo name (i.e. os222, os223, etc)
+REPO_NAME=os222
+
 # Get the GitHub username from the username of Linux
 ACCNAME=$USER
 
@@ -30,7 +33,7 @@ gpg --decrypt /tmp/tarball-grade/$ACCNAME.tar.bz2.txt > /tmp/tarball-grade/$ACCN
 tar -xf /tmp/tarball-grade/$ACCNAME.tar.bz2 -C /tmp/tarball-grade/mygrade
 
 # Download benchmark
-wget https://cbkadal.github.io/os212/SandBox/TARBALL.tar.bz2 -O /tmp/tarball-grade/TARBALL.tar.bz2
+wget https://cbkadal.github.io/$REPO_NAME/SandBox/TARBALL.tar.bz2 -O /tmp/tarball-grade/TARBALL.tar.bz2
 tar -xf /tmp/tarball-grade/TARBALL.tar.bz2 -C /tmp/tarball-grade/benchmark
 
 # Print grades
