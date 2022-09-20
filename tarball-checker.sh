@@ -20,32 +20,29 @@ REPO_NAME=os222
 # Get the GitHub username from the username of Linux
 ACCNAME=$USER
 
-# Remove temporary directory (if any)
-rm -rf /tmp/tarball-grade/
-
-# Make directories
-mkdir /tmp/tarball-grade/
-mkdir /tmp/tarball-grade/mygrade
-mkdir /tmp/tarball-grade/benchmark
+# Make directories (using timestamp and mktemp to avoid directory collision)
+TARBALL_TEMP_DIR=$(mktemp -d /tmp/tarball-checker-$(date +"%Y%m%d-%H:%M:%S")-XXXX)
+mkdir $TARBALL_TEMP_DIR/mygrade
+mkdir $TARBALL_TEMP_DIR/benchmark
 
 # If compression is bz2, use tar -xj. If compression is xz, use tar -xJ. I will find a more elegant solution to this.
 # Download mygrade
-wget https://os.vlsm.org/Log/$ACCNAME.tar.bz2.txt -O - | gpg | tar -xj -C /tmp/tarball-grade/mygrade
+wget https://os.vlsm.org/Log/$ACCNAME.tar.bz2.txt -O - | gpg | tar -xj -C $TARBALL_TEMP_DIR/mygrade
 
 # Download benchmark
-wget https://cbkadal.github.io/$REPO_NAME/SandBox/cbkadal.tar.xz -O - | tar -xJ -C /tmp/tarball-grade/benchmark
+wget https://cbkadal.github.io/$REPO_NAME/SandBox/cbkadal.tar.xz -O - | tar -xJ -C $TARBALL_TEMP_DIR/benchmark
 
 # Print grades
 echo "### GRADES OF DW$WEEK ###"
 echo "GRADE DETAILS   | MYGRADE          | BENCHMARK"
 echo "-----------------------------------------------------"
-for file in /tmp/tarball-grade/mygrade/$ACCNAME/DW$WEEK/*
+for file in $TARBALL_TEMP_DIR/mygrade/$ACCNAME/DW$WEEK/*
 do
     FILENAME="${file##*/}"
     FIRSTPART=$(printf '%-15s' "$FILENAME")
     MYGRADE=$(cat $file)
     SECONDPART=$(printf '%-16s' "$MYGRADE")
-    BENCHMARK=$(cat /tmp/tarball-grade/benchmark/cbkadal/DW$WEEK/$FILENAME)
+    BENCHMARK=$(cat $TARBALL_TEMP_DIR/benchmark/cbkadal/DW$WEEK/$FILENAME)
     THIRDPART=$(printf '%-16s' "$BENCHMARK")
     echo "$FIRSTPART | $SECONDPART | $THIRDPART"
 done
