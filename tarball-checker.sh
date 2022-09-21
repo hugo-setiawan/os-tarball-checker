@@ -5,7 +5,7 @@
 # useful, but WITHOUT ANY WARRANTY; without even the implied
 # warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
-# REV05 Tue 20 Sep 2022 15:13:00 WIB
+# REV05 Wed 21 Sep 2022 19:30:00 WIB
 # REV04 Sun 21 Nov 2021 18:29:25 WIB
 # REV03 Sun 21 Nov 2021 16:45:48 WIB
 # REV02 Tue 19 Oct 2021 13:30:00 WIB
@@ -13,7 +13,7 @@
 # START Tue 19 Oct 2021 11:02:45 WIB
 
 # Declare variables
-VER="REV05-dev"
+VER="REV05"
 
 # ATTN: Please set the following variable according to the os repo name (i.e. os222, os231, etc)
 REPO_NAME=os222
