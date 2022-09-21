@@ -9,9 +9,9 @@ Sebuah skrip sederhana untuk mengecek nilai mingguan mata kuliah Sistem Operasi 
 ## CHANGELOG
 
 ### REV05
-- Menambahkan **switch** untuk menampilkan menu `help` dan menyimpan file tarball.
-- Mengubah alur kerja script dengan menggunakan **pipes**.
-- Mengubah format nama dan cara pembuatan folder **temp**
+- Menambahkan *switch* untuk menampilkan menu `help` dan menyimpan file tarball.
+- Mengubah alur kerja script dengan menggunakan *pipes*.
+- Mengubah format nama dan cara pembuatan folder kerja.
 
 ### REV04
 - Mengubah masukan nama akun pengguna menjadi otomatis (menggunakan skrip `$USER`).
