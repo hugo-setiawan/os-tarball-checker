@@ -15,6 +15,12 @@
 # Declare variables
 VER="REV05-dev"
 
+# ATTN: Please set the following variable according to the os repo name (i.e. os222, os231, etc)
+REPO_NAME=os222
+
+# ATTN: Make sure Linux username = Linux group = GitHub username
+ACC_NAME=$USER
+
 # getopts for cli options
 while getopts "h" option; do
     case ${option} in
@@ -33,12 +39,6 @@ done
 
 read -p "Please enter the desired week to be checked (use two-digit format): " WEEK
 
-# ATTN: Please set the following variable according to the os repo name (i.e. os222, os223, etc)
-REPO_NAME=os222
-
-# Get the GitHub username from the username of Linux
-ACCNAME=$USER
-
 # Make directories (using timestamp and mktemp to avoid directory collision)
 TARBALL_TEMP_DIR=$(mktemp -d /tmp/tarball-checker-$(date +"%Y%m%d-%H:%M:%S")-XXXX)
 mkdir $TARBALL_TEMP_DIR/mygrade
@@ -46,7 +46,7 @@ mkdir $TARBALL_TEMP_DIR/benchmark
 
 # If compression is bz2, use tar -xj. If compression is xz, use tar -xJ. I will find a more elegant solution to this.
 # Download mygrade
-wget https://os.vlsm.org/Log/$ACCNAME.tar.bz2.txt -O - | gpg --decrypt | tar -xj -C $TARBALL_TEMP_DIR/mygrade
+wget https://os.vlsm.org/Log/$ACC_NAME.tar.bz2.txt -O - | gpg --decrypt | tar -xj -C $TARBALL_TEMP_DIR/mygrade
 
 # Download benchmark
 wget https://cbkadal.github.io/$REPO_NAME/SandBox/cbkadal.tar.xz -O - | tar -xJ -C $TARBALL_TEMP_DIR/benchmark
@@ -55,7 +55,7 @@ wget https://cbkadal.github.io/$REPO_NAME/SandBox/cbkadal.tar.xz -O - | tar -xJ 
 echo "### GRADES OF DW$WEEK ###"
 echo "GRADE DETAILS   | MYGRADE          | BENCHMARK"
 echo "-----------------------------------------------------"
-for file in $TARBALL_TEMP_DIR/mygrade/$ACCNAME/DW$WEEK/*
+for file in $TARBALL_TEMP_DIR/mygrade/$ACC_NAME/DW$WEEK/*
 do
     FILENAME="${file##*/}"
     FIRSTPART=$(printf '%-15s' "$FILENAME")
