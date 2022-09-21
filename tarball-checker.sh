@@ -21,8 +21,10 @@ REPO_NAME=os222
 # ATTN: Make sure Linux username = Linux group = GitHub username
 ACC_NAME=$USER
 
+CLEAN_TEMP=true
+
 # getopts for cli options
-while getopts "h" option; do
+while getopts "hs" option; do
     case ${option} in
     h) # Display help message
         echo "Usage:"
@@ -30,9 +32,13 @@ while getopts "h" option; do
         echo
         echo "Options:"
         echo "    -h	show this help list"
+        echo "    -s	save (don't delete) downloaded tarball and benchmark upon exit"
         echo
         echo "os-tarball-checker version $VER"
         exit 0
+        ;;
+    s) # Save (keep) temp directory on exiting; useful if user wants to check tarball manually
+        CLEAN_TEMP=false
         ;;
     esac
 done
@@ -66,3 +72,11 @@ do
     echo "$FIRSTPART | $SECONDPART | $THIRDPART"
 done
 
+# Delete temp files if user didn't ask to keep them
+if [[ $CLEAN_TEMP = true ]]
+then
+    rm -r $TARBALL_TEMP_DIR
+else
+    echo
+    echo "The opened tarballs are saved in $TARBALL_TEMP_DIR"
+fi
