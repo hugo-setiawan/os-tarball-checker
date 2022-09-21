@@ -12,6 +12,25 @@
 # REV01 Tue 19 Oct 2021 12:40:50 WIB
 # START Tue 19 Oct 2021 11:02:45 WIB
 
+# Declare variables
+VER="REV05-dev"
+
+# getopts for cli options
+while getopts "h" option; do
+    case ${option} in
+    h) # Display help message
+        echo "Usage:"
+        echo "    tarball-checker.sh [options]"
+        echo
+        echo "Options:"
+        echo "    -h	show this help list"
+        echo
+        echo "os-tarball-checker version $VER"
+        exit 0
+        ;;
+    esac
+done
+
 read -p "Please enter the desired week to be checked (use two-digit format): " WEEK
 
 # ATTN: Please set the following variable according to the os repo name (i.e. os222, os223, etc)
